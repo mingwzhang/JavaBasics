@@ -1,0 +1,104 @@
+ /*
+Create table called Products with pid,pname,price,disc_price and stock columns and insert records
+And do the following SQL Operation
+
+
+write a query to change the disc_price 100 if the price of product is more than 500
+
+write a query to select only the pname and disc_price if the disc_price is less than 100
+
+write a query to chage the price of product is 250 if the item name books and stock is 5
+
+write a query to delete if the product price is 100 or stock is 1
+*/
+
+CREATE TABLE Products (
+    pid integer,
+    pname varchar(50),
+    disc_price float(10),
+    stock int(10),
+    Primary KEY (pid)
+);
+
+Insert INTO Products (pid,pname,disc_price,stock)
+VALUES(1, 'DESKTOP', 1210.5, 7),
+(2, 'KEYBOARD', 91.43, 32),
+(3, 'MOUSE', 100, 25),
+(4, 'LAPTOP', 2432.65, 12),
+(5, 'SSD', 225.43, 18),
+(6, 'MOTHERBOARD', 435.32, 1),
+(7, 'SPEAKER', 50, 28),
+(8, 'books', 27.65, 5),
+(9, 'GPU', 1052.34, 31),
+(10, 'RAM', 200, 1),
+(11, 'USB', 50, 12);
+
+
+UPDATE Products 
+SET disc_price = 100 
+WHERE disc_price > 500;
+
+SELECT pname, disc_price FROM Products
+WHERE disc_price < 100;
+
+UPDATE Products 
+SET disc_price = 250 
+WHERE pname = 'books' AND stock = 5;
+
+DELETE FROM Products
+WHERE disc_price = 100 OR stock = 1;
+
+
+pid	pname	disc_price	stock
+1	DESKTOP	1210.5	7
+2	KEYBOARD	91.43	32
+3	MOUSE	100	25
+4	LAPTOP	2432.65	12
+5	SSD	225.43	18
+6	MOTHERBOARD	435.32	1
+7	SPEAKER	50	28
+8	books	27.65	5
+9	GPU	1052.34	31
+10	RAM	200	1
+11	USB	50	12
+
+pid	pname	disc_price	stock
+1	DESKTOP	100	7
+2	KEYBOARD	91.43	32
+3	MOUSE	100	25
+4	LAPTOP	100	12
+5	SSD	225.43	18
+6	MOTHERBOARD	435.32	1
+7	SPEAKER	50	28
+8	books	27.65	5
+9	GPU	100	31
+10	RAM	200	1
+11	USB	50	12
+
+
+pname	disc_price
+KEYBOARD	91.43
+SPEAKER	50
+books	27.65
+USB	50
+
+pid	pname	disc_price	stock
+1	DESKTOP	100	7
+2	KEYBOARD	91.43	32
+3	MOUSE	100	25
+4	LAPTOP	100	12
+5	SSD	225.43	18
+6	MOTHERBOARD	435.32	1
+7	SPEAKER	50	28
+8	books	250	5
+9	GPU	100	31
+10	RAM	200	1
+11	USB	50	12
+
+
+pid	pname	disc_price	stock
+2	KEYBOARD	91.43	32
+5	SSD	225.43	18
+7	SPEAKER	50	28
+8	books	250	5
+11	USB	50	12

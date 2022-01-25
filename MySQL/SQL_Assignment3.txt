@@ -1,0 +1,102 @@
+/*
+write a query to find those student name with all other information and name started 
+with other than any letter with in A and L
+write a sql queries to find those student name with all information whose names are ending with
+the letter n
+create a customer table with customer_id, cust_name city
+write a query to sort out those customers with all information whose
+id value is with in any of 3007, 3010, 3009
+
+
+
+write a query to get the details if the product name is like p
+
+write a query to find product details if the price is matching 50 100 or 200
+
+write a query to to get all the item except the price is 100
+*/
+
+
+SELECT * FROM STUDENT
+WHERE Student_name IN (Student_name LIKE ('A%') OR Student_name LIKE ('L%'));
+
+SELECT * FROM STUDENT
+WHERE Student_name Like "%n";
+
+
+CREATE TABLE CUSTOMER (
+    customer_id INT,
+    cust_name varchar(20),
+    city varchar(20),
+    PRIMARY KEY (customer_id) 
+);
+
+INSERT INTO CUSTOMER (customer_id,cust_name,city)
+    VALUES(3014, "Billy", "Albamy"),
+    (3009, "Caren", "Buffalo"),
+    (3010, "Alince", "New York City"),
+    (3007, "Jimmy", "Yonkers"),
+    (3001, "Tom", "Rochester");
+
+
+SELECT * FROM CUSTOMER
+WHERE customer_id IN (3007, 3010, 3009);
+
+SELECT * FROM PRODUCTS
+WHERE pname LIKE ('%p%');
+
+SELECT * FROM Products
+WHERE disc_price IN (50,100,200);
+
+SELECT * FROM Products
+WHERE disc_price NOT IN (100);
+
+
+
+
+
+
+Student_id	Student_name	Student_marks	Student_grade
+1	Bob	A	96
+3	Billy	B+	88
+4	Sen	B	85
+5	Katy	B-	80
+6	Jimmy	C+	79
+7	Robert	C	75
+10	Sann	D	65
+
+
+Student_id	Student_name	Student_marks	Student_grade
+4	Sen	B	85
+10	Sann	D	65
+
+
+
+customer_id	cust_name	city
+3001	Tom	Rochester
+3007	Jimmy	Yonkers
+3009	Caren	Buffalo
+3010	Alince	New York City
+3014	Billy	Albamy
+
+
+customer_id	cust_name	city
+3007	Jimmy	Yonkers
+3009	Caren	Buffalo
+3010	Alince	New York City
+
+pid	pname	disc_price	stock
+7	SPEAKER	50	28
+
+pid	pname	disc_price	stock
+7	SPEAKER	50	28
+11	USB	50	12
+
+
+
+pid	pname	disc_price	stock
+2	KEYBOARD	91.43	32
+5	SSD	225.43	18
+7	SPEAKER	50	28
+8	books	250	5
+11	USB	50	12

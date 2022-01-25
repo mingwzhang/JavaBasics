@@ -1,0 +1,38 @@
+#Create a table called Student and Insert at least 10 Records
+
+CREATE TABLE STUDENT (
+    Student_id integer,
+    Student_name varchar(50) NOT NULL,
+    Student_marks varchar(2),
+    Student_grade FLOAT(2),
+    PRIMARY KEY(Student_id)
+);
+
+INSERT INTO STUDENT (Student_id, Student_name, Student_marks, Student_grade)
+VALUES(1, 'Bob', 'A', '96'),
+(2, 'Amy', 'A-', '92'),
+(3, 'Billy', 'B+', '88'),
+(4, 'Sen', 'B', '85'),
+(5, 'Katy', 'B-', '80'),
+(6, 'Jimmy', 'C+', '79'),
+(7, 'Robert', 'C', '75'),
+(8, 'Louis', 'C-', '71'),
+(9, 'Larry', 'D+', '68'),
+(10, 'Sann', 'D', '65')
+;
+
+SELECT * FROM STUDENT;
+
+
+
+Student_id	Student_name	Student_marks	Student_grade
+1	Bob	A	96
+2	Amy	A-	92
+3	Billy	B+	88
+4	Sen	B	85
+5	Katy	B-	80
+6	Jimmy	C+	79
+7	Robert	C	75
+8	Louis	C-	71
+9	Larry	D+	68
+10	Sann	D	65
